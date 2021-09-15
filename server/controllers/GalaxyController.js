@@ -6,25 +6,15 @@ export class GalaxyController extends BaseController {
   constructor() {
     super('api/galaxys')
     this.router
-      .get('', this.getGalaxys)
-      .get('/:galaxyId', this.getGalaxy)
+      .get('', this.getGalaxy)
       .post('', this.createGalaxy)
       .put('/:galaxyId', this.editGalaxy)
       .delete('/:galaxyId', this.removeGalaxy)
   }
 
-  async getGalaxys(req, res, next) {
-    try {
-      const galaxys = await galaxysService.getGalaxys(req.query)
-      res.send(galaxys)
-    } catch (error) {
-      next(error)
-    }
-  }
-
   async getGalaxy(req, res, next) {
     try {
-      const galaxy = await galaxysService.getGalaxyById(req.params.galaxyId)
+      const galaxy = await galaxysService.getGalaxy(req.query)
       res.send(galaxy)
     } catch (error) {
       next(error)

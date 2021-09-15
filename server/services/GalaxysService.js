@@ -29,9 +29,9 @@ class GalaxysService {
     return galaxy
   }
 
-  async getGalaxys(query) {
-    const galaxys = await dbContext.Galaxys.find(query).populate('creator', 'name picture')
-    return galaxys
+  async getGalaxy(query) {
+    const galaxy = await dbContext.Galaxys.find(query).populate()
+    return galaxy
   }
 }
 

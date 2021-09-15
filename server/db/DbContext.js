@@ -8,7 +8,7 @@ import { PlanetSchema } from '../models/Planet'
 class DbContext {
   Values = mongoose.model('Value', ValueSchema);
   Stars = mongoose.model('Star', StarSchema);
-  Galaxy = mongoose.model('Galaxy', GalaxySchema);
+  Galaxys = mongoose.model('Galaxy', GalaxySchema);
   Planets = mongoose.model('Planet', PlanetSchema);
   Moons = mongoose.model('Moon', MoonSchema);
 }
