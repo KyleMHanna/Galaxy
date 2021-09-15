@@ -4,18 +4,18 @@ import { logger } from '../utils/Logger.js'
 
 export class GalaxyController extends BaseController {
   constructor() {
-    super('api/Galaxy')
+    super('api/galaxys')
     this.router
       .get('', this.getGalaxys)
-      .get('', this.getGalaxy)
+      .get('/:galaxyId', this.getGalaxy)
       .post('', this.createGalaxy)
-      .put('', this.editGalaxy)
+      .put('/:galaxyId', this.editGalaxy)
       .delete('/:galaxyId', this.removeGalaxy)
   }
 
   async getGalaxys(req, res, next) {
     try {
-      const galaxys = await galaxysService.getGalaxy(req.query)
+      const galaxys = await galaxysService.getGalaxys(req.query)
       res.send(galaxys)
     } catch (error) {
       next(error)
