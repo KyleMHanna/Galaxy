@@ -1,6 +1,5 @@
 import BaseController from '../utils/BaseController'
 import { galaxysService } from '../services/GalaxysService.js'
-import { logger } from '../utils/Logger.js'
 
 export class GalaxyController extends BaseController {
   constructor() {
